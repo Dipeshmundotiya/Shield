@@ -24,8 +24,28 @@
         android:id="@+id/itemRecyclerview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:listitem="@layout/item_member"
+        app:layout_constraintBottom_toTopOf="@id/invitecard"
         app:layout_constraintTop_toBottomOf="@id/carer"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/item_member" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/invitecard"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardElevation="24dp"
+        app:cardCornerRadius="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/inviterecycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:listitem="@layout/iteminvite"/>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

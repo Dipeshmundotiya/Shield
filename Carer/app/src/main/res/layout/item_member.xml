@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -7,7 +8,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/recyclecards"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="150dp"
         app:cardElevation="24dp"
         app:cardCornerRadius="16dp"
         android:layout_margin="16dp"
@@ -27,13 +28,92 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dipesh Mundotiya"
-        android:textStyle="bold"
-        android:textSize="24sp"
+        android:textStyle="normal"
+        android:textSize="18sp"
         android:gravity="center"
         android:elevation="24dp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
         app:layout_constraintStart_toEndOf="@id/userimage"
         app:layout_constraintTop_toTopOf="@id/recyclecards"
         />
+    <ImageView
+        android:id="@+id/locationimage"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/baseline_location_on_24"
+        app:layout_constraintTop_toBottomOf="@id/username"
+        app:layout_constraintStart_toEndOf="@id/userimage"
+        android:elevation="24dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/address"
+        android:ellipsize="end"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Indian Institute of Information Technology,RIICO industrial area,ranpur,kota"
+        android:elevation="24dp"
+        app:layout_constraintStart_toEndOf="@id/locationimage"
+        app:layout_constraintTop_toBottomOf="@id/username"
+
+        app:layout_constraintEnd_toEndOf="@id/recyclecards"
+        android:maxLines="2"
+        />
+
+
+
+    <ImageView
+        android:id="@+id/batteryimage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_battery_bar_24"
+        app:layout_constraintTop_toBottomOf="@id/userimage"
+        app:layout_constraintStart_toStartOf="@id/userimage"
+        android:elevation="24dp"
+        android:layout_margin="16dp"/>
+    <TextView
+        android:id="@+id/batterypercente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="24dp"
+        android:text="56%"
+        app:layout_constraintLeft_toRightOf="@id/batteryimage"
+        app:layout_constraintTop_toBottomOf="@id/userimage"
+        android:layout_marginTop="20dp"
+        />
+    <ImageView
+        android:id="@+id/distanceimage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_distance_24"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        app:layout_constraintStart_toEndOf="@id/batterypercente"
+        android:elevation="24dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/distancetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="24dp"
+        android:text="70KM"
+        app:layout_constraintStart_toEndOf="@id/distanceimage"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_call_24"
+        android:elevation="24dp"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        app:layout_constraintEnd_toEndOf="@id/recyclecards"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
