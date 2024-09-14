@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Debugging log to check if onCreate is called
-        Log.d("MainActivity", "onCreate called")
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -30,30 +30,40 @@ class MainActivity : AppCompatActivity() {
         val bottom_bar = findViewById<BottomNavigationView>(R.id.bottom_bar)
 
         bottom_bar.setOnItemSelectedListener {
-            Log.d("MainActivity", "BottomNavigationView item selected: ${it.itemId}")
 
-            if (it.itemId == R.id.nav_gaurd) {
-                Log.d("MainActivity", "Guard fragment selected")
-                inflateFragment()
+
+            when(it.itemId){
+                R.id.nav_gaurd -> {
+                    inflateFragment(GuardFragment.newInstance())
+                }
+                R.id.nav_dashboard -> {
+                    inflateFragment(DashboardFragment.newInstance())
+                }
+                R.id.nav_home -> {
+                    inflateFragment(HomeFragment.newInstance())
+                }
+                R.id.nav_profile -> {
+                    inflateFragment(ProfileFragment.newInstance())
+                }
             }
 
             true
         }
 
         // Debugging log to check default selected item
-        Log.d("MainActivity", "Setting default selected item in BottomNavigationView")
+
         bottom_bar.selectedItemId = R.id.nav_home
     }
 
-    private fun inflateFragment() {
-        Log.d("MainActivity", "Inflating GuardFragment")
+    private fun inflateFragment(newinstance : Fragment) {
+
 
         // Fragment transaction debugging
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container, GuardFragment.newInstance())
+        transaction.replace(R.id.container, newinstance)
 
         // Check if fragment is actually being committed
         transaction.commit()
-        Log.d("MainActivity", "Fragment transaction committed")
+
     }
 }

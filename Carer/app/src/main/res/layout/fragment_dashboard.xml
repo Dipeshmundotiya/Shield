@@ -8,10 +8,10 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/carer"
+        android:id="@+id/dashboardtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Carer"
+        android:text="Dashboard"
         android:textStyle="bold"
         android:textSize="24sp"
         android:gravity="center"
@@ -20,12 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/itemRecyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:listitem="@layout/item_member"
-        app:layout_constraintTop_toBottomOf="@id/carer"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
