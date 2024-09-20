@@ -4,6 +4,9 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -35,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         askForPermission()
+
         val bottom_bar = findViewById<BottomNavigationView>(R.id.bottom_bar)
 
         bottom_bar.setOnItemSelectedListener {
